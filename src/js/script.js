@@ -98,7 +98,7 @@ function pintarResultados(lista) {
     elementoNota.textContent = "Todos los personajes en esta lista están vivos";
     elementoNota.className = "nota nota-vivos";
   } else {
-    elementoNota.textContent = "Esta lista incluye personajes muertos o de estado desconocido";
+    elementoNota.textContent = "Esta lista incluye personajes muertos o de paradero desconocido";
     elementoNota.className = "nota nota-mixta";
   }
 
@@ -119,7 +119,7 @@ document.querySelector("#filtro-nombre").addEventListener("input", aplicarFiltro
 document.querySelector("#filtro-estado").addEventListener("change", aplicarFiltros);
 document.querySelector("#filtro-especie").addEventListener("change", aplicarFiltros);
 document.querySelector("#primeros-personajes").addEventListener("change", aplicarFiltros);
-document.querySelector("#sort").addEventListener("click", () => {
+document.querySelector("#ordenados").addEventListener("click", () => {
   orden = !orden
   aplicarFiltros()
 }) 
