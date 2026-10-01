@@ -112,16 +112,15 @@ function pintarResultados(lista) {
 document.querySelector("#filtro-nombre").addEventListener("input", aplicarFiltros);
 document.querySelector("#filtro-estado").addEventListener("change", aplicarFiltros);
 document.querySelector("#filtro-especie").addEventListener("change", aplicarFiltros);
-
-obtenerPersonajes().then(function (datos) {
-  personajes = datos;
-  aplicarFiltros();
-});
+document.querySelector("#primeros-personajes").addEventListener("change", aplicarFiltros);
 
 document.querySelector("#sort").addEventListener("click", function () {
   personajes = ordenarPorNombre(personajes);
 
   aplicarFiltros()
-})
+});
 
-document.querySelector("#primeros-personajes").addEventListener("change", aplicarFiltros)
+obtenerPersonajes().then(function (datos) {
+  personajes = datos;
+  aplicarFiltros();
+});
