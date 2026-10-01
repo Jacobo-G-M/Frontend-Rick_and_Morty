@@ -63,6 +63,7 @@ function contarVivos(personajes) {
 }
 
 let personajes = [];
+let orden = false
 
 function aplicarFiltros() {
   const nombre = document.querySelector("#filtro-nombre").value.trim().toLowerCase();
@@ -74,7 +75,12 @@ function aplicarFiltros() {
   filtrados = filtrados.filter(function (personaje) {
     return personaje.name.toLowerCase().includes(nombre);
   });
-  
+
+  if (orden) {
+    filtrados = ordenarPorNombre(filtrados)
+    orden = !orden
+  }
+
   const soloPrimeros = document.querySelector("#primeros-personajes").checked;
   if (soloPrimeros) {
     filtrados = primeros(filtrados, 10)
@@ -113,12 +119,11 @@ document.querySelector("#filtro-nombre").addEventListener("input", aplicarFiltro
 document.querySelector("#filtro-estado").addEventListener("change", aplicarFiltros);
 document.querySelector("#filtro-especie").addEventListener("change", aplicarFiltros);
 document.querySelector("#primeros-personajes").addEventListener("change", aplicarFiltros);
-
-document.querySelector("#sort").addEventListener("click", function () {
-  personajes = ordenarPorNombre(personajes);
-
+document.querySelector("#sort").addEventListener("click", () => {
+  orden = !orden
   aplicarFiltros()
-});
+}) 
+
 
 obtenerPersonajes().then(function (datos) {
   personajes = datos;
