@@ -10,7 +10,6 @@
     <header class="header">
       <h1>Buscador de personajes</h1>
     </header>
-
     <form class="filtros">
       <input type="text" id="filtro-nombre" placeholder="Buscar por nombre..." />
       <select id="filtro-estado">
@@ -24,9 +23,15 @@
         <option value="Human">Humano</option>
         <option value="Alien">Alien</option>
       </select>
+      <button type="button" id="sort">Ordenar por nombre</button>
+      <label class="primeros">
+        <input type="checkbox" id="primeros-personajes">
+        Mostrar los primeros 10 personajes
+      </label>
     </form>
 
     <p id="contador"></p>
+    <p id="nota-estado" class="nota"></p>
 
     <section id="resultados" class="personajes-grid"></section>
   </main>

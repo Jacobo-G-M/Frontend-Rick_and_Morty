@@ -11,7 +11,8 @@ body {
 }
 
 .header h1 {
-  background: linear-gradient(90deg, #97ce4c, #00b0c8); /* Verde y azul estilo Rick & Morty */
+  background: linear-gradient(90deg, #97ce4c, #00b0c8);
+  /* Verde y azul estilo Rick & Morty */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -30,10 +31,11 @@ body {
 }
 
 .filtros input,
-.filtros select {
+.filtros select,
+.filtros button {
   padding: 8px 12px;
   border-radius: 8px;
-  border:1px solid #2b2a2a;
+  border: 1px solid #2b2a2a;
   background: #172033;
   color: inherit;
 }
@@ -51,16 +53,38 @@ body {
 }
 
 .filtros input:hover,
-.filtros select:hover {
+.filtros select:hover,
+.filtros button:hover {
   outline: none;
   border-color: #415273;
   cursor: pointer;
 }
 
 .filtros input:focus,
-.filtros select:focus {
+.filtros select:focus,
+.filtros button:focus {
   outline: none;
   border-color: #97ce4c;
+}
+
+.nota {
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.nota-vivos {
+  background-color: rgba(85, 204, 68, 0.15);
+  border: 1px solid #55cc44;
+  color: #55cc44;
+}
+
+.nota-mixta {
+  background-color: rgba(114, 91, 15, 0.603);
+  border: 1px solid #e7870a;
+  color: #e7870a;
 }
 
 .personajes-grid {
@@ -68,11 +92,11 @@ body {
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 16px;
 }
-  
+
 .personaje-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6),
-              0 0 12px rgba(46, 197, 190, 0.6);
+    0 0 12px rgba(46, 197, 190, 0.6);
 }
 
 .personaje-card {
