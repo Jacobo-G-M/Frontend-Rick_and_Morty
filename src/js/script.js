@@ -92,7 +92,7 @@ function aplicarFiltros() {
 function pintarResultados(lista) {
   const contenedor = document.querySelector("#resultados");
   const elementoNota = document.querySelector("#nota-estado");
-  document.querySelector("#contador").textContent = lista.length + " personajes encontrados";
+  document.querySelector("#contador").textContent = lista.length + " personajes encontrados en total - " + contarVivos(lista) + " vivos";
 
   if (lista.length > 0 && todosVivos(lista)) {
     elementoNota.textContent = "Todos los personajes en esta lista están vivos";
